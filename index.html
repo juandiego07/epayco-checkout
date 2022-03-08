@@ -11,40 +11,169 @@
 
     <title>ePayco :: Checkout</title>
 </head>
-
-<body class="bg-light">
+<header class="sticky-top">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://www.epayco.com" target="_blank">
-                <img src="https://multimedia.epayco.co/epayco-landing/btns/epayco-logo-fondo-claro-lite.png" alt="epayco" width="200" class="d-inline-block align-text-top">
+                <img src="https://multimedia.epayco.co/epayco-landing/btns/epayco-logo-fondo-claro-lite.png" alt="epayco" width="150" class="d-inline-block align-text-top">
             </a>
         </div>
     </nav>
-    <div class="container my-5">
+</header>
+
+<body class="bg-light">
+
+    <div class="container-lg container-fluid my-2">
         <div class="row">
-            <div class="col-md-4 col-12">
+            <div class="col-md-4 col-12 mb-2">
                 <div class="card">
                     <div class="card-body">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="testProd">
-                            <label class="form-check-label" for="testProd" id="labelTestProd">Prueba</label>
+                        <div class="row">
+                            <div class="mb-3 col-sm-12 col-md-12 col-xl-4">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="testProd">
+                                    <label class="form-check-label" for="testProd" id="labelTestProd">Prueba</label>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-sm-12 col-md-12 col-xl-4">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="language">
+                                    <label class="form-check-label" for="language" id="labelLanguage">Español</label>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-sm-12 col-md-12 col-xl-4">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="typeUx">
+                                    <label class="form-check-label" for="typeUx" id="labelTypeUx">OnePage</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3">
+                                <label for="publicKey" class="form-label">Llave Publica ePayco</label>
+                                <input type="password" class="form-control" id="publicKey" value="c40acc8a877f180bf312c79aae0503f7">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3">
+                                <label for="urlResponse" class="form-label">URL Respuesta</label>
+                                <input type="url" class="form-control" id="urlResponse" value="http://diego.dev-plugins.info/respuesta.html">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3">
+                                <label for="urlConfirmation" class="form-label">URL Confirmación</label>
+                                <input type="url" class="form-control" id="urlConfirmation" value="http://diego.dev-plugins.info/confirmacion.php">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 col-12 mb-2">
+            <div class="col-md-8 col-12">
                 <div class="card">
                     <div class="card-body">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolorum eos repellendus. Accusamus et culpa placeat assumenda deleniti. Sed, aliquid! Eligendi sunt rem vitae perferendis quibusdam. Assumenda autem sed officia.
+                        <div class="row">
+                            <div class="col-12 col-lg-3">
+                                <div class="mb-3">
+                                    <label for="invoice" class="form-label">ID Factura</label>
+                                    <input type="text" class="form-control" id="invoice" readonly>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-9">
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" list="description" id="inputDescription" value="Prueba ePayco">
+                                    <datalist id="description">
+                                        <option value="Prueba ePayco PSE"></option>
+                                        <option value="Prueba ePayco Daviplata"></option>
+                                        <option value="Prueba ePayco TDC Redeban"></option>
+                                        <option value="Prueba ePayco TDC Credibanco"></option>
+                                    </datalist>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nombre y Apellido</label>
+                                    <input type="text" class="form-control" id="name" value="Juan Diego Vargas Posada">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3">
+                                    <label for="id" class="form-label">Documento</label>
+                                    <input type="text" class="form-control" id="id" value="1194418306">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="address" value="Calle 104 # 74a - 4">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="phone" value="3042462218">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="mb-3">
+                                    <label for="taxBase" class="form-label">Sub-Total</label>
+                                    <input type="number" class="form-control" id="taxBase" value="0.00" step="any" min="0">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-3">
+                                    <label for="taxIva" class="form-label">IVA</label>
+                                    <input type="number" class="form-control" id="taxIva" value="0.00" step="any" min="0">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="mb-3">
+                                    <label for="taxIco" class="form-label">Imp. Consumo</label>
+                                    <input type="number" class="form-control" id="taxIco" value="0.00" step="any" min="0" pattern="^[0-9]\d+$">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <h3>Total: $</h3>
+                            </div>
+                            <div class="col-2">
+                                <input type="number" class="form-control" id="amount" value="0.00" readonly></input>
+                            </div>
+                            <div class="col-4 mt-1">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="currency">
+                                    <label class="form-check-label" for="currency" id="labelCurrency"><strong>Pesos (COP)</strong></label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <input class="btn btn-secondary" type="submit" value="Pagar" id="pay">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
-<script src="https://juandiego07.github.io/epayco-checkout/js/validation.js"></script>
-
+<footer class="mt-auto py-3 bg-dark">
+    <div class="container">
+        <span class="text-muted">Copy right @juandiego07</span>
+    </div>
+</footer>
+<!-- checkout de epayco -->
+<script type="text/javascript" src="https://checkout.epayco.co/checkout.js"></script>
+<!-- inicialización del checkout -->
+<script src="/js/handler.js"></script>
+<!-- validacion en js -->
+<script src="/js/validation.js"></script>
 <!-- bootstrap 5 js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
