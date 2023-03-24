@@ -69,8 +69,8 @@ document.getElementById("pay").addEventListener("click", () => {
     //Atributos opcionales
     confirmation: document.getElementById("urlConfirmation").value,
     response: document.getElementById("urlResponse").value,
-    //method: document.getElementById("method").checked ? "POST" : "GET",
-    method_confirmation: document.getElementById("method").checked ? "POST" : "GET",
+    //method: document.getElementById("method").checked ? "GET" : "POST",
+    method_confirmation: document.getElementById("method").checked ? "GET" : "POST",
     // Split Payment
     extra1: "",
     extra2: "",
